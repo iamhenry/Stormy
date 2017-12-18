@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         let currentWeatherViewModel = CurrentWeatherViewModel(model: currentWeather)
         
         displayWeather(using: currentWeatherViewModel)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +41,7 @@ class ViewController: UIViewController {
         currentSummaryLabel.text = viewModel.summary
         currentWeatherIcon.image = viewModel.icon
     }
+    
 }
 
 

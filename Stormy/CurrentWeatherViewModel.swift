@@ -2,7 +2,7 @@
 //  CurrentWeatherViewModel.swift
 //  Stormy
 //
-//  Created by Screencast on 2/22/17.
+//  Created by Henry Moran on 12/17/17.
 //  Copyright © 2017 Treehouse. All rights reserved.
 //
 
@@ -32,14 +32,3 @@ struct CurrentWeatherViewModel {
         self.icon = weatherIcon.image
     }
 }
-
-
-
-
-
-
-
-
-
-
-

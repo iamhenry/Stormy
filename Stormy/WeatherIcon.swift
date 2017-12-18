@@ -35,6 +35,7 @@ enum WeatherIcon {
         case "partly-cloudy-day": self = .partlyCloudyDay
         case "partly-cloudy-night": self = .partlyCloudyNight
         default: self = .default
+        }
     }
 }
 
