@@ -30,15 +30,23 @@ class ViewController: UIViewController {
         displayWeather(using: currentWeatherViewModel)
         
         let base = URL(string: "https://api.darksky.net/forecast/\(darkSkyAPIKey)/")
-        let forecastURL = URL(string: "37.8267,-122.4233", relativeTo: base)
+        guard let forecastURL = URL(string: "37.8267,-122.4233", relativeTo: base) else { return }
         
-        let weatherData = try! Data(contentsOf: forecastURL!)
+        let configuration = URLSessionConfiguration.default
+        let session = URLSession(configuration: configuration)
         
-//        print(weatherData as NSData)
+        let request = URLRequest(url: forecastURL)
         
-        let json = try! JSONSerialization.jsonObject(with: weatherData, options: [])
+        print("Log before the request on the main thread")
         
-        print(json)
+        let dataTask = session.dataTask(with: request) { data, response, error in
+            print("Log inside the completion hangler")
+        }
+        
+        dataTask.resume()
+        
+        print("Log after resume")
+        
     }
 
     override func didReceiveMemoryWarning() {
