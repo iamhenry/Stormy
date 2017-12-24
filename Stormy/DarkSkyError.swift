@@ -2,16 +2,17 @@
 //  DarkSkyError.swift
 //  Stormy
 //
-//  Created by  Henry Moran on 12/19/17.
+//  Created by Screencast on 3/1/17.
 //  Copyright © 2017 Treehouse. All rights reserved.
 //
 
 import Foundation
 
-enum DarkSkyError {
+enum DarkSkyError: Error {
     case requestFailed
     case responseUnsuccessful
     case invalidData
     case jsonConversionFailure
-    case invalidURL
+    case invalidUrl
+    case jsonParsingFailure
 }
